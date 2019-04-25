@@ -12,7 +12,7 @@ app.get('/api/customers', (req, res)=>{
 })
 
 if(process.env.NODE_ENV === 'production'){
-	app.use(express.static('build/client'))
+	app.use(express.static('client/build'))
   app.get('*', (req,res)=>{
     res.sendFile(path.join(__dirname, 'client', 'build', 'index.html'))
   })
